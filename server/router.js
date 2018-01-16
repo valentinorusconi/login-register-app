@@ -12,23 +12,23 @@ const REQUIRE_ADMIN = "Admin",
   REQUIRE_CLIENT = "Client",
   REQUIRE_MEMBER = "Member";
 
-module.exports = (app) => {
+module.exports = app => {
   const apiRoutes = express.Router(),
     authRoutes = express.Router();
 
-    //=====================
-    //Auth authRoutes
-    //=====================
+  //=====================
+  //Auth authRoutes
+  //=====================
 
-    //Set auth routes as subgroup/middleware to apiRoutes
-    apiRoutes.use('/auth', authRoutes);
+  //Set auth routes as subgroup/middleware to apiRoutes
+  apiRoutes.use("/auth", authRoutes);
 
-    //Registration route
-    authRoutes.post("/register", AuthenticationController.register);
+  //Registration route
+  authRoutes.post("/register", AuthenticationController.register);
 
-    //Login route
-    authRoutes.post("/login", AuthenticationController.login);
+  //Login route
+  authRoutes.post("/login", AuthenticationController.login);
 
   //Set url for Api group apiRoutes
-  app.use("/api",apiRoutes);
-}
+  app.use("/api", apiRoutes);
+};
