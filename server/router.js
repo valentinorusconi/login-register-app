@@ -1,4 +1,4 @@
-const AuthenticationController = require("./controller/authenticaion"),
+const AuthenticationController = require("./controllers/authentication"),
   express = require("express"),
   passportService = require("./config/passport"),
   passport = require("passport");
