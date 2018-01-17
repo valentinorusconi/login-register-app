@@ -2,6 +2,7 @@ const express = require("express"),
   app = express(),
   logger = require("morgan"),
   bodyParser = require("body-parser"),
+  mongoose = require("mongoose"),
   config = require("./config/main"),
   router = require("./router");
 
@@ -10,7 +11,7 @@ const express = require("express"),
 mongoose.connect(config.database);
 
 //Server start
-const server = app.listen("config.port");
+const server = app.listen(config.port);
 console.log("magic happens on port " + config.port);
 
 app.use(bodyParser.urlencoded({ extended: false }));
